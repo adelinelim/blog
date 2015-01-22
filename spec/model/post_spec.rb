@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Post do
   before(:each) do
-    @attr = { title: "post title", content: "post content" }
+    @attr = { title: "post title", content: "post content"}
   end
 
   it "should create a new instance with valid attributes" do
@@ -36,5 +36,12 @@ describe Post do
     duplicate_post = Post.new(@attr)
     duplicate_post.should_not be_valid
   end
+
+  #it "should have the right posts in the right order" do
+  #  @post1 = Post.create!(@attr, created_at: 1.day.ago)
+  #  @post2 = Post.create!(@attr.merge(title: "something"), created_at: 1.hour.ago)
+
+  #  Post.should == [@post2, @post1]
+  #end
 
 end

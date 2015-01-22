@@ -9,4 +9,8 @@ class CreateComments < ActiveRecord::Migration
     end
     add_index :comments, :post_id
   end
+
+  def self.down
+    drop_table :comments
+  end
 end

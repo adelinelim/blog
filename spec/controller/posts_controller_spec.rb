@@ -9,6 +9,4 @@ RSpec.describe PostsController, :type => :controller do
     end
   end
 
-  
-
 end

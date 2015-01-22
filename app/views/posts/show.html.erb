@@ -13,9 +13,11 @@
   <%= join_tags(@post) %>
 </p>
 
+<p>Posted by: <%= post_user_name(@post) %></p>
+
 <br />
 
-<% if user_signed_in? %>
+<% if is_current_user_post(@post) %>
   <%= link_to 'Edit Post', edit_post_path(@post), class: "button" %>
 <% end %>
 

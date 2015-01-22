@@ -5,11 +5,9 @@ class PostsController < ApplicationController
   def index
 
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag])
-                      .paginate(:page => params[:page])
-                      .order('created_at DESC')
+      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page])
     else
-      @posts = Post.paginate(:page => params[:page]).order('created_at DESC')
+      @posts = Post.paginate(:page => params[:page])
     end
 
     respond_to do |format|
@@ -48,7 +46,9 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+
     @post = Post.new(params[:post])
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save

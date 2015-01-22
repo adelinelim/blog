@@ -1,6 +1,14 @@
 module PostsHelper
   def join_tags(post)
     post.tags.map { |t| t.name }.join(", ")
-    #post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
   end
+
+  def is_current_user_post(post)
+    user_signed_in? and current_user.id == post.user_id
+  end
+
+  def post_user_name(post)
+    User.find_by_id(post.user_id).email
+  end
+
 end
