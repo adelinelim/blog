@@ -5,7 +5,8 @@ class Post < ActiveRecord::Base
 
   acts_as_taggable
 
-  validates :title,   :uniqueness => { :message => "already taken" },
+  validates :title,   :presence => true,
+                      :uniqueness => { :message => "already taken" },
                       :length => { :within => 2..255 }
 
   validates :content, :presence => true

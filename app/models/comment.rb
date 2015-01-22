@@ -3,7 +3,8 @@ class Comment < ActiveRecord::Base
 
   attr_accessible :name, :content
 
-  validates :name,  :length => { :within => 2..255 }
+  validates :name,  :presence => true,
+                    :length => { :within => 2..255 }
 
   validates :content,  :presence => true
 
