@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
   attr_accessible :name, :content
 
   validates :name,  :presence => true,
-                    :length => { :within => 2..255 }
+                    :length => { :within => 2..100 }
 
   validates :content,  :presence => true
 
