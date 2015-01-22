@@ -62,6 +62,7 @@ GEM
     mime-types (1.25.1)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
+    pg (0.18.1)
     polyglot (0.3.5)
     rack (1.4.5)
     rack-cache (1.2)
@@ -78,6 +79,11 @@ GEM
       activesupport (= 3.2.18)
       bundler (~> 1.0)
       railties (= 3.2.18)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.3)
+    rails_stdout_logging (0.0.3)
     railties (3.2.18)
       actionpack (= 3.2.18)
       activesupport (= 3.2.18)
@@ -142,7 +148,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise (~> 3.3.0)
   jquery-rails
+  pg
   rails (= 3.2.18)
+  rails_12factor
   rspec
   rspec-rails
   sass-rails (~> 3.2.3)
